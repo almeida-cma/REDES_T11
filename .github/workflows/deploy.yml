@@ -45,14 +45,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # Aqui você pode precisar do parâmetro enablement para forçar a configuração
-          enablement: true  # Força a configuração do GitHub Pages, caso necessário
+          enablement: true  # Forçar habilitação do GitHub Pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: .  # Implanta todo o conteúdo do repositório
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          # Aqui deve ser incluído o caminho correto do artefato, se necessário
